@@ -1,12 +1,16 @@
 # Know The City
+
 ## Project Idea
 A user can explore the city by selecting, places to eat from, recreations, hotels, entertainment etc, by selecting any particular activity, a user can add that into their list and make the list according to their own choice.
 ## Project Manager: Benjamin Papac
-#User Stories
+
+# User Stories
 - As a user, I want to see different options to do.
 - As a user, I want to crud my choices.
 - As a user, I want to see my saved list.
-#Wire Frames
+
+# Wire Frames
+
 ![Screen Shot 2021-10-05 at 8 19 10 PM](https://user-images.githubusercontent.com/81372190/136121280-33df6163-3cd3-4417-a7eb-cd7a4726823c.png)
 ![Screen Shot 2021-10-05 at 8 12 30 PM](https://user-images.githubusercontent.com/81372190/136120889-bdb68fd5-a50a-4404-8c7a-213fa5b462ba.png)
 ![Screen Shot 2021-10-05 at 8 12 10 PM](https://user-images.githubusercontent.com/81372190/136120878-c5347781-9dc3-4d3c-9407-4f3833a6f3a2.png)
