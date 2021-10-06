@@ -27,4 +27,6 @@ we want to be able to add/delete attractions by clicking on a button, or perhaps
     
 STRETCH -- 
 we want to be able to search for attractions from the attractions array by different properties
+
+export default Home
 */
