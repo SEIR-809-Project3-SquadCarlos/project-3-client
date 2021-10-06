@@ -3,6 +3,8 @@
 ## Project Idea
 A user can explore the city by selecting, places to eat from, recreations, hotels, entertainment etc, by selecting any particular activity, a user can add that into their list and make the list according to their own choice.
 ## Project Manager: Benjamin Papac
+## Project Squad: 
+Eegii Unurbayar, Gary Williams, Syeda Alam
 
 # User Stories
 - As a user, I want to see different options to do.
