@@ -3,6 +3,7 @@ import { useState,  useEffect} from "react";
 import React from 'react';
 import axios from "axios";
 import { useParams, useHistory } from "react-router-dom";
+import API_URL from "../../config.js"
 
 const Detail = ({props}) => {
 /////function logic is here
@@ -18,7 +19,7 @@ const Detail = ({props}) => {
 //  const [url, setUrl] = useState("");
 // use effect to get the data and store it in our use state  variable
 useEffect(() => {
-   axios.get(`http://localhost:3060/attractions/${id}`)
+   axios.get(`${API_URL}/attractions/${id}`)
    .then((item)=>setSingleAttraction(item.data))
    .catch(error=>console.error(error))
 }, []);
@@ -102,7 +103,7 @@ try {
                     <input onChange={handleChange} name="name" type="text" value={newObject.name} placeholder="new name" />
                 </label>
                 <label htmlFor="">
-                    <input onChange={handleChange} name="genre"type="text" value={newObject.genre} />
+                    <input onChange={handleChange} name="genre"type="text" value={newObject.genre}  placeholder="new genre" />
                 </label>
                 
                 <label htmlFor="address">Address: </label>
