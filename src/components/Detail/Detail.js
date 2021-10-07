@@ -104,3 +104,8 @@ try {
                     <input onChange={handleChange} name="description" type="text" value="submit" />
                     <input onChange={handleChange} name="url" type="text" value="submit" />
                 </label>
+                </form>
+                </div>
+    )
+    }
+export default Detail
