@@ -4,6 +4,9 @@ import axios from 'axios';
 import API_URL from '../config';
 import './Create.css';
 
+// const Create = () => {
+
+// };
 
 /*
 IMPORT
@@ -42,3 +45,5 @@ onSubmit, we will run our POST request using the completed model!
 export default Create
 
 */
+
+export default Create;

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 // importing url from config.js made in src folder
-import API_URL from '../config';
+import API_URL from '../../config';
 //trying to check whether API_URL is working or not buut having errors while compiling
 console.log(API_URL);
 

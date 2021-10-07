@@ -95,17 +95,27 @@ try {
                 <button onClick={handleDelete}>Delete</button>
             </aside>
             {/* <label for="update" */}
-            <form name="update" onSubmit={HandleSubmit}>
                 <label>
                     Attraction
+            <form name="update" onSubmit={HandleSubmit}>
+                <label htmlFor="">
                     <input onChange={handleChange} name="name" type="text" value="submit" />
-                    <input onChange={handleChange} name="genre"type="text" value="submit" />
-                    <input onChange={handleChange} name="address" type="text" value="submit" />
-                    <input onChange={handleChange} name="description" type="text" value="submit" />
-                    <input onChange={handleChange} name="url" type="text" value="submit" />
                 </label>
-                </form>
-                </div>
+                <label htmlFor="">
+                    <input onChange={handleChange} name="genre"type="text" value="submit" />
+                </label>
+                
+                <label htmlFor="address">Address: </label>
+                <input onChange={handleChange} name="address" type="text" value="submit" />
+
+                <label htmlFor="description">Description: </label>
+                <input onChange={handleChange} name="description" type="text" value="submit" />
+
+                <label htmlFor="url">Website: </label>
+                <input onChange={handleChange} name="url" type="text" value="submit" />
+            </form>
+            </label>
+        </div>
     )
     }
 export default Detail
