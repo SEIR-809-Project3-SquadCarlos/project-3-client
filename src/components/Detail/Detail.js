@@ -10,7 +10,7 @@ const Detail = ({props}) => {
     
 // Use state here to represent the attactions 
  const [singleAttraction,setSingleAttraction]= useState([]);
- const id= useParams
+ const {id}= useParams()
 // use effect to get the data and store it in our use state  variable
 useEffect(() => {
    axios.get(`http://localhost:3050/attractions/${id}`)
