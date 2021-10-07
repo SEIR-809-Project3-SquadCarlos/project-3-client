@@ -10,7 +10,7 @@ const Detail = ({props}) => {
 // Use state here to represent the attactions 
  const [singleAttraction,setSingleAttraction]= useState([]);
  const {id}= useParams();
- //const [newObject, setNewObject] = useState({}); 
+ const [newObject, setNewObject] = useState({}); 
 //  const [name,setName] = useState("");
 //  const [genre,setGenre]=useState("");
 //  const [address, setAddress] = useState("");
@@ -18,20 +18,20 @@ const Detail = ({props}) => {
 //  const [url, setUrl] = useState("");
 // use effect to get the data and store it in our use state  variable
 useEffect(() => {
-   axios.get(`http://localhost:3050/attractions/${id}`)
-   .then((item)=>setSingleAttraction(item))
+   axios.get(`http://localhost:3060/attractions/${id}`)
+   .then((item)=>setSingleAttraction(item.data))
    .catch(error=>console.error(error))
 }, []);
 
 // show the proerties of the said attractions
 // have buttons for updating and delete
 const handleChange =(event)=>{
-
+    console.log(singleAttraction);
     let name = event.target.name;
     let value = event.target.value;
     //It would be so great if we could update the entire object all at once. 
     //In other words, if, when we update the name, the whole singleAttraction object gets passed in.
-    setSingleAttraction(
+    setNewObject(
         {
             [name] : value
         }
@@ -47,14 +47,14 @@ const handleChange =(event)=>{
     // else setUrl(event.target.value);
 
 
-    setSingleAttraction()
+    // setSingleAttraction()
     //HOWEVER, I don't know how to do that yet, so... why don't we update one piece of singleAttraction at a time?
 }
 // update function needs to have a cancel or confirm change option
 const  handleUpdate= async ()=>{
     // let's UPDATE our singleAttraction with the input created by the user. This MAY need to be its own function.
     try {
-       const newAttraction = await axios.put(`http://localhost:3050/attractions/${id}`, singleAttraction);
+       const newAttraction = await axios.put(`http://localhost:3060/attractions/${id}`, singleAttraction);
        console.log(newAttraction);
     } catch (error) {
         console.log(error);
@@ -73,7 +73,7 @@ const handleDelete = async  ()=>{
     const verify = window.confirm('Are you sure you want to delete?');
     if(verify){
 try {
-     const deleteOne = await axios.delete(`http:localhost:3000/attraction/${id}`)
+     const deleteOne = await axios.delete(`http:localhost:3060/attraction/${id}`)
      console.log(deleteOne);
     } catch (error) {
         console.log(error);   
@@ -99,20 +99,20 @@ try {
                     Attraction
             <form name="update" onSubmit={HandleSubmit}>
                 <label htmlFor="">
-                    <input onChange={handleChange} name="name" type="text" value="submit" />
+                    <input onChange={handleChange} name="name" type="text" value={newObject.name} placeholder="new name" />
                 </label>
                 <label htmlFor="">
-                    <input onChange={handleChange} name="genre"type="text" value="submit" />
+                    <input onChange={handleChange} name="genre"type="text" value={newObject.genre} />
                 </label>
                 
                 <label htmlFor="address">Address: </label>
-                <input onChange={handleChange} name="address" type="text" value="submit" />
+                <input onChange={handleChange} name="address" type="text" value={newObject.adress} />
 
                 <label htmlFor="description">Description: </label>
-                <input onChange={handleChange} name="description" type="text" value="submit" />
+                <input onChange={handleChange} name="description" type="text" value={newObject.description} />
 
                 <label htmlFor="url">Website: </label>
-                <input onChange={handleChange} name="url" type="text" value="submit" />
+                <input onChange={handleChange} name="url" type="text" value={newObject.url} />
             </form>
             </label>
         </div>
