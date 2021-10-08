@@ -58,8 +58,8 @@ const Detail = ({ props }) => {
 				newObject
 			);
 
-			console.log(newAttraction);
-			newAttraction.status === 200 && history.push('/');
+			console.log(newAttraction.status);
+			newAttraction.status === 201 && history.push('/');
 		} catch (error) {
 			console.log(error);
 			// }
@@ -111,7 +111,7 @@ const Detail = ({ props }) => {
 					name='name'
 					type='text'
 					value={newObject.name}
-					placeholder='new name'
+					placeholder='edit name'
 				/>
 
 				<label htmlFor='genre'>Genre: </label>
@@ -120,7 +120,7 @@ const Detail = ({ props }) => {
 					name='genre'
 					type='text'
 					value={newObject.genre}
-					placeholder='new genre'
+					placeholder='edit genre'
 				/>
 
 				<label htmlFor='address'>Address: </label>
@@ -129,7 +129,7 @@ const Detail = ({ props }) => {
 					name='address'
 					type='text'
 					value={newObject.address}
-					placeholder='address'
+					placeholder='edit address'
 				/>
 
 				<label htmlFor='url'>Website: </label>
@@ -138,6 +138,7 @@ const Detail = ({ props }) => {
 					name='url'
 					type='text'
 					value={newObject.url}
+					placeholder = 'edit website'
 				/>
 
 				<label htmlFor='description'>Description: </label>
@@ -146,7 +147,7 @@ const Detail = ({ props }) => {
 					name='description'
 					type='text'
 					value={newObject.description}
-					placeholder='new description'
+					placeholder='edit description'
 				/>
 
 				<button type='submit'>Submit</button>

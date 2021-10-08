@@ -25,7 +25,7 @@ const Home = () => {
 		<div className='attraction-list'>
 			{attractions.map((attraction) => {
 				return (
-					<Link to={`${attraction._id}`}>
+					<Link to={`/attractions/${attraction._id}`}>
 						<div key={attraction.id}>
 							<h3>{attraction.name}</h3>
 							<p>{attraction.description}</p>
