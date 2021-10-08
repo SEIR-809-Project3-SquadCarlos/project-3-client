@@ -12,6 +12,7 @@ const Detail = ({props}) => {
  const [singleAttraction,setSingleAttraction]= useState([]);
  const {id}= useParams();
  const [newObject, setNewObject] = useState({}); 
+ let history = useHistory()
 //  const [name,setName] = useState("");
 //  const [genre,setGenre]=useState("");
 //  const [address, setAddress] = useState("");
@@ -65,23 +66,29 @@ const  handleUpdate= async ()=>{
 const HandleSubmit = (event) => {
     event.preventDefault()
     alert('Are you sure you want to submit this change?')
-    useHistory('/')
+    history.push('/')
 }
 // for the delete function we need to make sure that we have a are you sure option
 
-const handleDelete = async  ()=>{
+const handleDelete = async  (event)=>{
 
     const verify = window.confirm('Are you sure you want to delete?');
     if(verify){
 try {
-     const deleteOne = await axios.delete(`http:localhost:3060/attraction/${id}`)
-     console.log(deleteOne);
+     const deleteOne = await axios.delete(`${API_URL}/attractions/${id}`);
+     
+     deleteOne.status===(204)&&history.push('/')
     } catch (error) {
         console.log(error);   
     }
 }
+else{
+    return 
+}
     }
-
+if (!singleAttraction) {
+    <h1>loading</h1>
+}
     return (
         <div>
             <h1>{singleAttraction.name}</h1>
