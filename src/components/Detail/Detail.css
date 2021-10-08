@@ -1,0 +1,28 @@
+/* Adding a border around the attractions  */
+/* make content fit the mobile screen by setting minimums for the size  */
+.attraction{
+    border: 2px solid blue;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 300%;
+    min-width: 300px;
+    min-height: 250px;
+}
+/* Adding a font to the attactions  */
+/* style the buttons  */
+button {
+    border-radius: 3%;
+    border: solid black 1px;
+    background: white;
+    color: blue;
+}
+/* give the form for editing and creating some style possibly make a modal for the details page so that it pops up when the edit is clicked   */
+.edit-form{
+    /* position: fixed;
+    margin-top: 40px; */
+    z-index: 1;
+    background-color: rgba(255,255,253,0.5);
+    /* we want our width and height to equal 100% of our CONTAINER, not the Document */
+    min-width: 100%; 
+    min-height: 100%;
+
+}

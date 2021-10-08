@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 // importing url from config.js made in src folder
 import API_URL from '../../config';
+import './Home.css'
 //trying to check whether API_URL is working or not buut having errors while compiling
 console.log(API_URL);
 

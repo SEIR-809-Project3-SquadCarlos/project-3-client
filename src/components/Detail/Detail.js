@@ -4,6 +4,8 @@ import React from 'react';
 import axios from 'axios';
 import { useParams, useHistory } from 'react-router-dom';
 import API_URL from '../../config.js';
+import "./Detail.css";
+import "../Form.css"
 
 const Detail = ({ props }) => {
 	/////function logic is here
@@ -87,8 +89,8 @@ const Detail = ({ props }) => {
 	if (!singleAttraction) {
 		<h1>loading</h1>;
 	}
-	return !edit ? (
-		<div>
+	return (
+		<div className='attraction'>
 			<h1>{singleAttraction.name}</h1>
 			<ul>
 				<li>{singleAttraction.description}</li>
@@ -100,58 +102,59 @@ const Detail = ({ props }) => {
 				<button onClick={handleEdit}>Edit</button>
 				<button onClick={handleDelete}>Delete</button>
 			</aside>
-		</div>
-	) : (
-		<div>
-			<label htmlFor='update'>Attraction</label>
-			<form name='update' onSubmit={handleSubmit}>
-				<label htmlFor='name'>Name: </label>
-				<input
-					onChange={handleChange}
-					name='name'
-					type='text'
-					value={newObject.name}
-					placeholder='edit name'
-				/>
+			{!edit ? (null) : (
+			<div className='edit-form'>
+				<label htmlFor='update'>Attraction</label>
+				<form name='update' onSubmit={handleSubmit}>
+					<label htmlFor='name'>Name: </label>
+					<input
+						onChange={handleChange}
+						name='name'
+						type='text'
+						value={newObject.name}
+						placeholder='edit name'
+					/>
 
-				<label htmlFor='genre'>Genre: </label>
-				<input
-					onChange={handleChange}
-					name='genre'
-					type='text'
-					value={newObject.genre}
-					placeholder='edit genre'
-				/>
+					<label htmlFor='genre'>Genre: </label>
+					<input
+						onChange={handleChange}
+						name='genre'
+						type='text'
+						value={newObject.genre}
+						placeholder='edit genre'
+					/>
 
-				<label htmlFor='address'>Address: </label>
-				<input
-					onChange={handleChange}
-					name='address'
-					type='text'
-					value={newObject.address}
-					placeholder='edit address'
-				/>
+					<label htmlFor='address'>Address: </label>
+					<input
+						onChange={handleChange}
+						name='address'
+						type='text'
+						value={newObject.address}
+						placeholder='edit address'
+					/>
 
-				<label htmlFor='url'>Website: </label>
-				<input
-					onChange={handleChange}
-					name='url'
-					type='text'
-					value={newObject.url}
-					placeholder = 'edit website'
-				/>
+					<label htmlFor='url'>Website: </label>
+					<input
+						onChange={handleChange}
+						name='url'
+						type='text'
+						value={newObject.url}
+						placeholder='edit website'
+					/>
 
-				<label htmlFor='description'>Description: </label>
-				<input
-					onChange={handleChange}
-					name='description'
-					type='text'
-					value={newObject.description}
-					placeholder='edit description'
-				/>
+					<label htmlFor='description'>Description: </label>
+					<input
+						onChange={handleChange}
+						name='description'
+						type='text'
+						value={newObject.description}
+						placeholder='edit description'
+					/>
 
-				<button type='submit'>Submit</button>
-			</form>
+					<button type='submit'>Submit</button>
+				</form>
+			</div>
+			)}
 		</div>
 	);
 };

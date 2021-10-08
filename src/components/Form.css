@@ -1,0 +1,33 @@
+/* Eegii
+start giving classNmes for the tags
+give style on buttons and inputs
+    border radius, color, font
+stick with 3 simple color for hole app!
+media quiry!
+
+*/
+
+form {
+	display: grid;
+	margin: 15px;
+	padding: 10px;
+    background-color: light-grey ;
+}
+
+.input {
+	display: inline-block;
+	border-radius: 15px;
+	background-color: light-grey;
+	border-radius: 10px;
+}
+.placeholder {
+	margin: 5px;
+	padding: 5px;
+}
+/* button {
+    
+} */
+
+/* .edit-form {
+
+} */

@@ -1,38 +1,34 @@
-.App {
-  text-align: center;
-}
+/* Rely on Grid */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+    margin: 0;
+    padding: 0;
+    background: black;
+    color: white;
+    
 }
+ * a{
+     text-decoration: none;
+ }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/*change the look and font of the navbar  */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
+
+/* add basic animations 
+   add individual css files for components
+   put hover effect while switching onto different attractions in
+
+1- we have to install
+ $ npm install animate.css --save
+or
+ 2- npm add animate.css
+
+ 3- import to our files
+    import 'animate.css'
+
+    we also csn use @keyframes by using it in classes so that they can be reusable
+*/

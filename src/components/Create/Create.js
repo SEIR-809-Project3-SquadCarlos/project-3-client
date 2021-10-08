@@ -3,6 +3,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
 import API_URL from '../../config';
 import './Create.css';
+import '../Form.css';
 
 const Create = () => {
  const history = useHistory();
@@ -52,7 +53,7 @@ const handleSubmit = async(event) => {
 
 // RETURN
 return(
-    <div>
+    <div className="create-form">
         <form  onSubmit={handleSubmit}>
         <label htmlFor='name'>Name: </label>
 				<input

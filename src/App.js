@@ -7,15 +7,17 @@ import Create from './components/Create/Create';
 
 function App() {
   return (
-    <div>
-     <Navbar/>
-
-     <Route exact path="/" component={Home}  />
-    <Route path="/attractions/:id" component={Detail} />
-    <Route path="/create"component={Create} />
-     
-    </div>
-  );
+		<>
+			<header>
+				<Navbar />
+			</header>
+			<main>
+				<Route exact path='/' component={Home} />
+				<Route path='/attractions/:id' component={Detail} />
+				<Route path='/create' component={Create} />
+			</main>
+		</>
+	);
 }
 
 export default App;
