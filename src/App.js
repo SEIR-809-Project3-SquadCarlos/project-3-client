@@ -6,8 +6,8 @@ import Detail from './components/Detail/Detail';
 import Create from './components/Create/Create';
 
 function App() {
-  return (
-		<>
+	return (
+		<div className='app'>
 			<header>
 				<Navbar />
 			</header>
@@ -16,7 +16,7 @@ function App() {
 				<Route path='/attractions/:id' component={Detail} />
 				<Route path='/create' component={Create} />
 			</main>
-		</>
+		</div>
 	);
 }
 

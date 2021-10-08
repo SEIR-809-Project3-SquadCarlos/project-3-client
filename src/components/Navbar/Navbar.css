@@ -1,4 +1,7 @@
-.color-nav {
-    background-color: #964242;
-    border-color: #4ac696;
+.nav {
+	background-color: #2d4059;
+	position: sticky;
+}
+.active a {
+	background-color: green !important;
 }
