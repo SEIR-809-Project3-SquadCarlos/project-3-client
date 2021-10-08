@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 // importing url from config.js made in src folder
 import API_URL from '../../config';
-import './Home.css'
+import '../../App.css';
+import './Home.css';
 //trying to check whether API_URL is working or not buut having errors while compiling
 console.log(API_URL);
 
@@ -26,13 +27,10 @@ const Home = () => {
 		<div className='attraction-list'>
 			{attractions.map((attraction) => {
 				return (
-					<Link to={`/attractions/${attraction._id}`}>
-						<div key={attraction.id}>
+					<Link className="home-link" to={`/attractions/${attraction._id}`}>
+						<div  className="home-attraction" key={attraction.id}>
 							<h3>{attraction.name}</h3>
 							<p>{attraction.description}</p>
-							<a href={`${attraction.url}`} alt='webiste for this attraction'>
-								`${attraction.url}`
-							</a>
 						</div>
 					</Link>
 				);

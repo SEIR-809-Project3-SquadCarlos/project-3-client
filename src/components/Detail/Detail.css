@@ -1,28 +1,43 @@
 /* Adding a border around the attractions  */
 /* make content fit the mobile screen by setting minimums for the size  */
-.attraction{
+.detail-attraction{
+   
     border: 2px solid blue;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 300%;
     min-width: 300px;
     min-height: 250px;
+    background-color: rgb(45, 64, 89);
 }
 /* Adding a font to the attactions  */
 /* style the buttons  */
 button {
-    border-radius: 3%;
+    border-radius: 13%;
     border: solid black 1px;
-    background: white;
+    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
     color: blue;
+    padding: 2rem;
+    
 }
+.buttons-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+
+    /* we want to style the details which is done is attractions but lets see what we can add in details */
+    
 /* give the form for editing and creating some style possibly make a modal for the details page so that it pops up when the edit is clicked   */
-.edit-form{
+/* .edit-form{
     /* position: fixed;
-    margin-top: 40px; */
+    margin-top: 40px; 
     z-index: 1;
     background-color: rgba(255,255,253,0.5);
-    /* we want our width and height to equal 100% of our CONTAINER, not the Document */
+     we want our width and height to equal 100% of our CONTAINER, not the Document 
     min-width: 100%; 
     min-height: 100%;
+    color:white;
 
-}
+} */

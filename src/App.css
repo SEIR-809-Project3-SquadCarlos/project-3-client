@@ -3,16 +3,23 @@
 * {
     margin: 0;
     padding: 0;
-    background: black;
-    color: white;
     
+    color:rgb(34, 40, 49);
+    
+}
+main {
+    display: grid;
+    grid-template:  10% 80% 10%/ 10% 80% 10%;
+}
+
+main {
+    background:rgb(238, 238, 238);
 }
  * a{
      text-decoration: none;
  }
 
 /*change the look and font of the navbar  */
-
 
 
 

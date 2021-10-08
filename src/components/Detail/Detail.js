@@ -90,15 +90,15 @@ const Detail = ({ props }) => {
 		<h1>loading</h1>;
 	}
 	return (
-		<div className='attraction'>
+		<div className='detail-attraction'>
 			<h1>{singleAttraction.name}</h1>
-			<ul>
+			<ul className="details">
 				<li>{singleAttraction.description}</li>
 				<li>{singleAttraction.address}</li>
 				<li>{singleAttraction.url}</li>
 				<li>{singleAttraction.genre}</li>
 			</ul>
-			<aside>
+			<aside className='buttons-flex'>
 				<button onClick={handleEdit}>Edit</button>
 				<button onClick={handleDelete}>Delete</button>
 			</aside>

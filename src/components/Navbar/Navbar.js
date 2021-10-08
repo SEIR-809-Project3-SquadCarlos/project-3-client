@@ -1,12 +1,13 @@
 import React from 'react';
 import {useLocation} from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
+import "./Navbar.css"
 
 const Navbar = () => {
 	let location = useLocation();
 	console.log('location: ',location);
 	return (
-		<Nav variant="pills" activeKey={location.pathname === "/" ? "/" : '/create'}>
+		<Nav className="nav" variant="pills" activeKey={location.pathname === "/" ? "/" : '/create'}>
 			<Nav.Item>
 				<Nav.Link href="/">Home</Nav.Link>
 			</Nav.Item>
