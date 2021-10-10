@@ -53,10 +53,11 @@ const handleSubmit = async(event) => {
 
 // RETURN
 return(
-    <div className="create-form">
-        <form  onSubmit={handleSubmit}>
+    <div className="container-form">
+		<h3>Please fill this form for create new Attraction</h3>
+        <form  className="create-form" onSubmit={handleSubmit}>
         <label htmlFor='name'>Name: </label>
-				<input
+				<input className="input-create"
 					onChange={handleChange}
 					name='name'
 					type='text'
@@ -65,7 +66,7 @@ return(
 				/>
 
 				<label htmlFor='genre'>Genre: </label>
-				<input
+				<input className="input-create"
 					onChange={handleChange}
 					name='genre'
 					type='text'
@@ -74,7 +75,7 @@ return(
 				/>
 
 				<label htmlFor='address'>Address: </label>
-				<input
+				<input className="input-create"
 					onChange={handleChange}
 					name='address'
 					type='text'
@@ -83,7 +84,7 @@ return(
 				/>
 
 				<label htmlFor='url'>Website: </label>
-				<input
+				<input className="input-create"
 					onChange={handleChange}
 					name='url'
 					type='text'
@@ -92,14 +93,14 @@ return(
 				/>
 
 				<label htmlFor='description'>Description: </label>
-				<input
+				<input className="input-create"
 					onChange={handleChange}
 					name='description'
 					type='text'
 					value={newAttraction.description}
 					placeholder='new description'
 				/>
-                <button type='submit'>Submit</button>
+                <button className="btn-create" type='submit'>Submit</button>
         </form>
     </div>
 )
