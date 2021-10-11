@@ -64,7 +64,6 @@ const Detail = ({ props }) => {
 			newAttraction.status === 201 && history.push('/');
 		} catch (error) {
 			console.log(error);
-			// }
 		}
 	};
 	// for the delete function we need to make sure that we have a are you sure option
