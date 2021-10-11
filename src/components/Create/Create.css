@@ -40,7 +40,7 @@
 }
 .label-input{
   display:block;
-  background-color:rgb(45, 64, 89) ;
+ background-color: rgb(45, 64, 89);
 
 }
 
@@ -80,7 +80,7 @@ textarea:focus {
 }
 .btn-create {
 	border-radius: 15px;
-	background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+	background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, rgb(235, 177, 116));
 	color: blue;
 	cursor: pointer;
 	grid-column-end: 3;

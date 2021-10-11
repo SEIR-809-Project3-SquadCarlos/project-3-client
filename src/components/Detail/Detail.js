@@ -92,7 +92,7 @@ const Detail = ({ props }) => {
 	return (
 		<div className='detail-attraction'>
 			<h1>{singleAttraction.name}</h1>
-			<ul className="details">
+			<ul>
 				<li>{singleAttraction.description}</li>
 				<li>{singleAttraction.address}</li>
 				<li>{singleAttraction.url}</li>
