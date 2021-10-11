@@ -4,6 +4,7 @@ import React from 'react';
 import axios from 'axios';
 import { useParams, useHistory } from 'react-router-dom';
 import API_URL from '../../config.js';
+import "../../CSSRESET.css";
 import "./Detail.css";
 import "../Form.css"
 
@@ -47,13 +48,12 @@ const Detail = ({ props }) => {
 	// update function needs to have a cancel or confirm change option
 	const handleEdit = () => {
 		setEdit(!edit);
+
 	};
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		console.log(newObject);
-		// const verify = window.confirm('Do you want to update ?');
-		//    if (verify){
 		try {
 			const newAttraction = await axios.put(
 				`${API_URL}/attractions/${id}`,
@@ -66,9 +66,6 @@ const Detail = ({ props }) => {
 			console.log(error);
 			// }
 		}
-		// else {
-		// 	return;
-		// }
 	};
 	// for the delete function we need to make sure that we have a are you sure option
 
@@ -102,10 +99,11 @@ const Detail = ({ props }) => {
 				<button onClick={handleEdit}>Edit</button>
 				<button onClick={handleDelete}>Delete</button>
 			</aside>
-			{!edit ? (null) : (
-			<div className='edit-form'>
+			{edit && 
+			<div className="detail-modal" >
+			
 				<label htmlFor='update'>Attraction</label>
-				<form name='update' onSubmit={handleSubmit}>
+				<form className='edit-form' name='update' onSubmit={handleSubmit}>
 					<label htmlFor='name'>Name: </label>
 					<input
 						onChange={handleChange}
@@ -143,6 +141,7 @@ const Detail = ({ props }) => {
 					/>
 
 					<label htmlFor='description'>Description: </label>
+			
 					<input
 						onChange={handleChange}
 						name='description'
@@ -154,7 +153,9 @@ const Detail = ({ props }) => {
 					<button type='submit'>Submit</button>
 				</form>
 			</div>
-			)}
+
+		}
+		
 		</div>
 	);
 };

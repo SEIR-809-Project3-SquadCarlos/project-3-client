@@ -23,6 +23,11 @@ button {
     padding: 15px;
     margin-top: 85px;
     font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    
+
+    
    
 }
 /* Adding a font to the attractions  */
@@ -41,6 +46,20 @@ li{
 
 
 
+.detail-modal {
+    /* display: flex; */
+    z-index: 4;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+
+}
+
+.edit-form {
+	width: 500px;
+	height: 400px;
+}
 
     /* we want to style the details which is done is attractions but lets see what we can add in details */
    
