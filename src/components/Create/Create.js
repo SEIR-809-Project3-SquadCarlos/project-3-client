@@ -52,58 +52,79 @@ const handleSubmit = async(event) => {
 
 
 // RETURN
-return(
-    <div className="container-form">
-		<h3>Please fill this form for create new Attraction</h3>
-        <form  className="create-form" onSubmit={handleSubmit}>
-        <label htmlFor='name'>Name: </label>
-				<input className="input-create"
+return (
+	<div className='container-form'>
+		<h2>Please fill this form for create new Attraction</h2>
+		<form className='create-form' onSubmit={handleSubmit}>
+			<div className='label-input'>
+				<label htmlFor='id'>Name :</label>
+				<input
+					id='id'
+					className='input-create'
 					onChange={handleChange}
 					name='name'
 					type='text'
 					value={newAttraction.name}
 					placeholder='new name'
 				/>
+			</div>
+			<div className='label-input'>
+			<label htmlFor='genre'>Genre :</label>
+			<input
+				id='genre'
+				className='input-create'
+				onChange={handleChange}
+				name='genre'
+				type='text'
+				value={newAttraction.genre}
+				placeholder='new genre'
+			/>
+			</div>
 
-				<label htmlFor='genre'>Genre: </label>
-				<input className="input-create"
-					onChange={handleChange}
-					name='genre'
-					type='text'
-					value={newAttraction.genre}
-					placeholder='new genre'
-				/>
+			<div className='label-input'>
+			<label htmlFor='address'>Address :</label>
+			<input
+				id='address'
+				className='input-create'
+				onChange={handleChange}
+				name='address'
+				type='text'
+				value={newAttraction.address}
+				placeholder='new address'
+			/>
+			</div>
+			<div className='label-input'>
+			<label htmlFor='url'>Website :</label>
+			<input
+				id='url'
+				className='input-create'
+				onChange={handleChange}
+				name='url'
+				type='text'
+				value={newAttraction.url}
+				placeholder='new website'
+			/>
+			</div>
 
-				<label htmlFor='address'>Address: </label>
-				<input className="input-create"
-					onChange={handleChange}
-					name='address'
-					type='text'
-					value={newAttraction.address}
-					placeholder='new address'
-				/>
+			<div className='label-input'>
+			<label htmlFor='description'>Description :</label>
+			<input
+				id='description'
+				className='input-create'
+				onChange={handleChange}
+				name='description'
+				type='text'
+				value={newAttraction.description}
+				placeholder='new description'
+			/>
+			</div>
 
-				<label htmlFor='url'>Website: </label>
-				<input className="input-create"
-					onChange={handleChange}
-					name='url'
-					type='text'
-					value={newAttraction.url}
-                    placeholder = 'new website'
-				/>
-
-				<label htmlFor='description'>Description: </label>
-				<input className="input-create"
-					onChange={handleChange}
-					name='description'
-					type='text'
-					value={newAttraction.description}
-					placeholder='new description'
-				/>
-                <button className="btn-create" type='submit'>Submit</button>
-        </form>
-    </div>
-)
+			<button className='btn-create' type='submit'>
+				Submit
+			</button>
+		</form>
+	</div>
+);
 }
 // Let's make a form that the user can fill out.
 // It should include INPUTS for:
