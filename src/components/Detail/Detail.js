@@ -4,7 +4,7 @@ import React from 'react';
 import axios from 'axios';
 import { useParams, useHistory } from 'react-router-dom';
 import API_URL from '../../config.js';
-import "../../CSSRESET.css";
+// import "../../CSSRESET.css";
 import "./Detail.css";
 import "../Form.css"
 
@@ -30,7 +30,7 @@ const Detail = ({ props }) => {
 			.catch((error) => console.error(error));
 	}, []);
 
-	// show the proerties of the said attractions
+	// show the properties of the said attractions
 	// have buttons for updating and delete
 	const handleChange = (event) => {
 		console.log(singleAttraction);
@@ -87,74 +87,91 @@ const Detail = ({ props }) => {
 	}
 	return (
 		<div className='detail-attraction'>
-			<h1>{singleAttraction.name}</h1>
-			<ul className="details">
-				<li>{singleAttraction.description}</li>
-				<li>{singleAttraction.address}</li>
-				<li>{singleAttraction.url}</li>
-				<li>{singleAttraction.genre}</li>
-			</ul>
+			<h1 id="detail-item-name">{singleAttraction.name}</h1>
+			<section className='details'>
+				<p className="detail-item" id="detail-item-description">{singleAttraction.description}</p>
+				<li className="detail-item" id="detail-item-address">Address: {singleAttraction.address}</li>
+				<a href={`${singleAttraction.url}`} alt="website link" className="detail-item" id="detail-item-link">Website: {singleAttraction.url}</a>
+			</section>
 			<aside className='buttons-flex'>
 				<button onClick={handleEdit}>Edit</button>
 				<button onClick={handleDelete}>Delete</button>
 			</aside>
-			{edit && 
-			<div className="detail-modal" >
-			
-				<label htmlFor='update'>Attraction</label>
-				<form className='edit-form' name='update' onSubmit={handleSubmit}>
-					<label htmlFor='name'>Name: </label>
-					<input
-						onChange={handleChange}
-						name='name'
-						type='text'
-						value={newObject.name}
-						placeholder='edit name'
-					/>
-
-					<label htmlFor='genre'>Genre: </label>
-					<input
-						onChange={handleChange}
-						name='genre'
-						type='text'
-						value={newObject.genre}
-						placeholder='edit genre'
-					/>
-
-					<label htmlFor='address'>Address: </label>
-					<input
-						onChange={handleChange}
-						name='address'
-						type='text'
-						value={newObject.address}
-						placeholder='edit address'
-					/>
-
-					<label htmlFor='url'>Website: </label>
-					<input
-						onChange={handleChange}
-						name='url'
-						type='text'
-						value={newObject.url}
-						placeholder='edit website'
-					/>
-
-					<label htmlFor='description'>Description: </label>
-			
-					<input
-						onChange={handleChange}
-						name='description'
-						type='text'
-						value={newObject.description}
-						placeholder='edit description'
-					/>
-
-					<button type='submit'>Submit</button>
-				</form>
-			</div>
-
-		}
-		
+			{!edit ? (null) : (
+				<div className='detail-modal'>
+					<form className='edit-form' name='update' onSubmit={handleSubmit}>
+						<div className='label-text'>
+						<label htmlFor='name'>Name:</label>
+						<input
+							id='name'
+							onChange={handleChange}
+							name='name'
+							type='text'
+							value={newObject.name}
+							placeholder='edit name'
+						/>
+						</div>
+						<div className='label-text'>
+						<label htmlFor='genre'>
+							Genre:	</label>
+							<input
+							// className='textbox'
+								id='genre'
+								onChange={handleChange}
+								name='genre'
+								type='text'
+								value={newObject.genre}
+								placeholder='edit genre'
+							/>
+						</div>
+						<div className='label-text'>
+						<label htmlFor='address'>
+							Address:
+						</label>
+							<input
+								id='address'
+								onChange={handleChange}
+								name='address'
+								type='text'
+								value={newObject.address}
+								placeholder='edit address'
+							/>
+						
+						
+						</div>
+						<div className='label-text'>
+						<label htmlFor='url'>
+							Website:</label>
+							<input
+								id='url'
+								onChange={handleChange}
+								name='url'
+								type='text'
+								value={newObject.url}
+								placeholder='edit website'
+							/>
+						</div>
+						<div className='label-text'>
+						<label htmlFor='description'>
+							Description:</label>
+							<input
+								id='description'
+								onChange={handleChange}
+								name='description'
+								type='text'
+								value={newObject.description}
+								placeholder='edit description'
+								width="100"
+								height="100"
+							/>
+							</div>
+							<aside className='buttons-flex'>
+								<button type='submit'>Submit</button>
+								<button onclick={handleEdit}>Cancel</button>
+							</aside>
+					</form>
+				</div>
+			)}
 		</div>
 	);
 };

@@ -53,9 +53,9 @@ const handleSubmit = async(event) => {
 
 // RETURN
 return (
-	<div className='container-form'>
-		<h2>Please fill this form for create new Attraction</h2>
+	< >
 		<form className='create-form' onSubmit={handleSubmit}>
+		<h2>Please fill this form for create new Attraction</h2>
 			<div className='label-input'>
 				<label htmlFor='id'>Name :</label>
 				<input
@@ -123,7 +123,7 @@ return (
 				Submit
 			</button>
 		</form>
-	</div>
+	</>
 );
 }
 // Let's make a form that the user can fill out.
