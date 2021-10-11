@@ -30,16 +30,16 @@ a {
 .home-attraction {
 	margin: 10px;
 	padding: 10px;
-	border: 2px;
+	border:  2px;
 	border-radius: 13px;
 	width: 200px;
 	height: 200px;
-	background-color: rgba(255, 86, 34, 0.769);
+	background-color: rgba(238, 238, 238, 0.4 );
 
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 	text-align: center;
 
-	color: rgb(238, 238, 238);
+
 }
 .home-link {
 	text-decoration: none;

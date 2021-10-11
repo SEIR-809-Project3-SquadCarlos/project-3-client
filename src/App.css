@@ -3,8 +3,8 @@
 * {
 	margin: 0;
 	padding: 0;
-    background-color: rgb(34, 40, 49);
-	color: rgb(133, 133, 133);
+    /* background-color: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c); */
+	color: rgb(238,238,238);
 }
 
 .app {
