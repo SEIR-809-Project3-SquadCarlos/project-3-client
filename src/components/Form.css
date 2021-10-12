@@ -11,7 +11,6 @@ form {
 	/* Display tells this object to display its children in a particular way. */
 	display: grid;
 	grid-template: repeat(6, 1fr) / 1fr;
-	margin: 15px;
 	padding: 10px;
     background-color:rgb(45, 64, 89);
 
@@ -19,6 +18,7 @@ form {
 label {
 	color:rgb(238, 238, 238);
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	background: none;
 }
 
 .input {
@@ -29,6 +29,10 @@ label {
 	width:80%;
 	border-radius: 25px;
 
+}
+
+.label-text {
+	background: none;
 }
 .placeholder {
 	margin: 15px;
@@ -42,24 +46,97 @@ button {
 
 }
 
- .modal {
-     display: flex; 
-    z-index: 1;
-    grid-row: 2;
-    grid-column: 2;
+.detail-modal {
+	grid-row: 2;
+	grid-column: 1/span 3;
+	
+	z-index: 4;
+	height: 110%;
+	width:100%;
 
+	display: flex;
+	flex-direction: column;
+
+	overflow: auto;
 }
+
+.detail-model input {
+	width: 200px;
+	color: black;
+}
+
+.detail-model::-webkit-scrollbar {
+	display: none;
+}
+
 .edit-form {
 	width: 100%;
 	height: 100%;
-	background-color: rgb(45, 64, 89);
-
+	
 	border: solid black 1px;
 	border-radius: 25px;
-	z-index: 20;
-	padding: 15px;
+	padding: 1rem;
 
     text-align: center;
 	font-family: 'Roboto', sans-serif;
 	color: rgb(238, 238, 238);
+
+	display: flex;
+	flex-direction: column;
+	overflow: auto;
+}
+
+.edit-form::-webkit-scrollbar {
+	display: none;
+
+}
+
+.form-buttons-flex{
+
+	align-self: center;
+	display: flex;
+	flex-direction: row;
+
+	justify-content: space-evenly;
+}
+
+
+@media(min-width: 500px) {
+	.detail-modal {
+	/* position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%); */
+	grid-row: 1/span 3;
+	grid-column: 1/span 3;
+	align-self: center;
+	background-color: rgba(0, 0, 0, 0.7); 
+
+	display: grid;
+	grid-template: 10% 80% 10%/10% 80% 10%;
+
+	overflow: none;
+}
+
+.edit-form {
+	grid-row: 2;
+	grid-column: 2;
+	height: 110%;
+	width: 100%;
+
+	padding: 1rem;
+}
+.form-buttons-flex {
+	grid-row: 3;
+	grid-column: 2;
+	margin-top: 2rem;
+
+	justify-content: space-evenly;
+}
+
+.form-button {
+	align-self: center;
+
+}
+
 }

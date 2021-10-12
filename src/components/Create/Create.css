@@ -1,23 +1,6 @@
 /*on create we want to give the button more style  as well as give the */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-.container-form {
-
-	text-align: center;
-	background-color: rgb(45, 64, 89);
-	color: rgb(238, 238, 238);
-	font-family: 'Roboto', sans-serif;
-	border: solid black 1px;
-	border-radius: 25px;
-	height: 120%;
-	/* margin-top: 85px; */
-	/* z-index: 20; */
-	padding: 15px;
-	/* display: inline-block; */
-	/* justify-items: center; */
-	/* align-items: center; */
-}
-
 
 .create-form {
 	/* margin:20px; */
@@ -43,11 +26,13 @@
 	overflow: auto;
 }
 
-.create-form::scrollbar {
+.create-form::-webkit-scrollbar {
 	display: none;
 }
 
 .btn-create {
+	grid-row: 3;
+	margin-top: -20px;
 	align-self: center;
 }
 .label-input{
@@ -112,6 +97,7 @@ h2 {
 }
 @media(min-width: 500px) {
 	.create-form {
-		overflow: none;
+		grid-row: 1/span 2;
+		height: fit-content;
 	}
 }

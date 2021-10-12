@@ -85,37 +85,52 @@ const Detail = ({ props }) => {
 	if (!singleAttraction) {
 		<h1>loading</h1>;
 	}
+	
 	return (
-		<div className='detail-attraction'>
-			<h1 id="detail-item-name">{singleAttraction.name}</h1>
-			<section className='details'>
-				<p className="detail-item" id="detail-item-description">{singleAttraction.description}</p>
-				<li className="detail-item" id="detail-item-address">Address: {singleAttraction.address}</li>
-				<a href={`${singleAttraction.url}`} alt="website link" className="detail-item" id="detail-item-link">Website: {singleAttraction.url}</a>
-			</section>
+		<>
+		{!edit ? (
+			<>
+			<div className='detail-attraction'>
+				<h1 id='detail-item-name'>{singleAttraction.name}</h1>
+				<section className='details'>
+					<p className='detail-item' id='detail-item-description'>
+						{singleAttraction.description}
+					</p>
+					<li className='detail-item' id='detail-item-address'>
+						Address: {singleAttraction.address}
+					</li>
+					<a
+						href={`${singleAttraction.url}`}
+						alt='website link'
+						className='detail-item'
+						id='detail-item-link'>
+						Website: {singleAttraction.url}
+					</a>
+				</section>
+			</div>
 			<aside className='buttons-flex'>
 				<button onClick={handleEdit}>Edit</button>
 				<button onClick={handleDelete}>Delete</button>
 			</aside>
-			{!edit ? (null) : (
+			</>
+			 ) : (
 				<div className='detail-modal'>
 					<form className='edit-form' name='update' onSubmit={handleSubmit}>
 						<div className='label-text'>
-						<label htmlFor='name'>Name:</label>
-						<input
-							id='name'
-							onChange={handleChange}
-							name='name'
-							type='text'
-							value={newObject.name}
-							placeholder='edit name'
-						/>
+							<label htmlFor='name'>Name:</label>
+							<input
+								id='name'
+								onChange={handleChange}
+								name='name'
+								type='text'
+								value={newObject.name}
+								placeholder='edit name'
+							/>
 						</div>
 						<div className='label-text'>
-						<label htmlFor='genre'>
-							Genre:	</label>
+							<label htmlFor='genre'>Genre: </label>
 							<input
-							// className='textbox'
+								// className='textbox'
 								id='genre'
 								onChange={handleChange}
 								name='genre'
@@ -125,9 +140,7 @@ const Detail = ({ props }) => {
 							/>
 						</div>
 						<div className='label-text'>
-						<label htmlFor='address'>
-							Address:
-						</label>
+							<label htmlFor='address'>Address:</label>
 							<input
 								id='address'
 								onChange={handleChange}
@@ -136,12 +149,9 @@ const Detail = ({ props }) => {
 								value={newObject.address}
 								placeholder='edit address'
 							/>
-						
-						
 						</div>
 						<div className='label-text'>
-						<label htmlFor='url'>
-							Website:</label>
+							<label htmlFor='url'>Website:</label>
 							<input
 								id='url'
 								onChange={handleChange}
@@ -152,8 +162,7 @@ const Detail = ({ props }) => {
 							/>
 						</div>
 						<div className='label-text'>
-						<label htmlFor='description'>
-							Description:</label>
+							<label htmlFor='description'>Description:</label>
 							<input
 								id='description'
 								onChange={handleChange}
@@ -161,18 +170,22 @@ const Detail = ({ props }) => {
 								type='text'
 								value={newObject.description}
 								placeholder='edit description'
-								width="100"
-								height="100"
+								width='100'
+								height='100'
 							/>
-							</div>
-							<aside className='buttons-flex'>
-								<button type='submit'>Submit</button>
-								<button onclick={handleEdit}>Cancel</button>
-							</aside>
+						</div>
+						<aside className='form-buttons-flex'>
+							<button className='form-button' type='submit'>
+								Submit
+							</button>
+							<button className='form-button'  onclick={handleEdit}>
+								Cancel
+							</button>
+						</aside>
 					</form>
 				</div>
 			)}
-		</div>
+		</>
 	);
 };
 export default Detail;
