@@ -140,6 +140,18 @@ const Detail = ({ props }) => {
 							/>
 						</div>
 						<div className='label-text'>
+							<label htmlFor='city'>City: </label>
+							<input
+								// className='textbox'
+								id='city'
+								onChange={handleChange}
+								name='city'
+								type='text'
+								value={newObject.genre}
+								placeholder='edit city'
+							/>
+						</div>
+						<div className='label-text'>
 							<label htmlFor='address'>Address:</label>
 							<input
 								id='address'

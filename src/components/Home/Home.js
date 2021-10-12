@@ -24,18 +24,23 @@ const Home = () => {
 	}, []);
 
 	return (
-		<div className='attraction-list'>
-			{attractions.map((attraction) => {
-				return (
-					<Link className="home-link" to={`/attractions/${attraction._id}`}>
-						<div  className="home-attraction" key={attraction.id}>
-							<h3>{attraction.name}</h3>
-							<p>{attraction.description}</p>
-						</div>
-					</Link>
-				);
-			})}
-		</div>
+		<>
+		<h1 className="headline">Welcome to TouRing!</h1>
+			<div className='attraction-list'>
+			
+				{attractions.map((attraction) => {
+					return (
+						<Link className="home-link" to={`/attractions/${attraction._id}`}>
+							<div  className="home-attraction" key={attraction.id}>
+								<h3>{attraction.name}</h3>
+								<h4>{attraction.city}</h4>
+								
+							</div>
+						</Link>
+					);
+				})}
+			</div>
+		</>
 	);
 };
 

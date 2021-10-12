@@ -12,7 +12,7 @@ form {
 	display: grid;
 	grid-template: repeat(6, 1fr) / 1fr;
 	padding: 10px;
-    background-color:rgb(45, 64, 89);
+    
 
 }
 label {
@@ -110,7 +110,7 @@ button {
 	grid-row: 1/span 3;
 	grid-column: 1/span 3;
 	align-self: center;
-	background-color: rgba(0, 0, 0, 0.7); 
+	/* background-color: rgba(0, 0, 0, 0.7);  */
 
 	display: grid;
 	grid-template: 10% 80% 10%/10% 80% 10%;

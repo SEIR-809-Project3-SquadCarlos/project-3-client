@@ -2,6 +2,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import API_URL from '../../config';
+import './Category.css';
 
 const Category = () => {
     const [attractions,setAttractions]=useState([]);
@@ -20,14 +21,14 @@ const getAttractions = async () => {
 		getAttractions();
 	}, []);
     // provided by Ben, first developed during project 2
-    const inputIsClose = (event, attraction)  => {
+    const inputIsClose = (event, string)  => {
 		let mySnippet = '';
 		let distance = 0; // the difference between our two strings. In other words, how different are they?
         //How many characters are different?
-		if (attraction.length <= 0) return false;
+		if (!string.length) return false;
 		if (event.target.value.length < 3) return false;
         // substring creates a new string starting at a given location, and extending to a given length.
-		mySnippet = attraction.substring(0, event.target.value.length);
+		mySnippet = string.substring(0, event.target.value.length);
 
         // we need to compare strings that are the exact same length. That allows us to run something like a simple for loop.
 		for (let i = 0; i < mySnippet.length; i++) {
@@ -43,12 +44,13 @@ const getAttractions = async () => {
             // an if statement measures either true or false
             // inputIsClose() returns... true or false
             //rather than a strict equals, what if we run inputIsClose, comparing our input to each of these values?
+            console.log(attraction.name);
         if( inputIsClose(event, attraction.city)
             || inputIsClose(event, attraction.name)
             || inputIsClose(event, attraction.genre)
             ) 
             return attraction;
-        })
+        }) 
         console.log(result);
         return setFilter(result);
     }
@@ -63,19 +65,20 @@ const getAttractions = async () => {
     }
         
     return (
-        <>
-        <div>
-            <form action="/" method="get" onSubmit={handleSubmit}>
-                <input type="text" placeholder="Search" onChange={handleChange} value={input} />
-                <button type="submit">Submit</button>
+        <div className="category-parent">
+       
+            <form  className="search-form"action="/" method="get" onSubmit={handleSubmit}>
+                <h4 className="search-label">Search by city, name, or type!</h4>
+
+                <input id="cati-id"type="text" name="search" placeholder="Search" onChange={handleChange} value={input} />
             </form>
-        </div>
-        <div>
+     
+        <div className='result'>
                 {filter.map((itemAttraction)=>{
                     return(
-                        <card>
+                        <card className="category-link" >
 
-                        <Link className="category-link" to={`/attractions/${itemAttraction._id}`}>
+                        <Link to={`/attractions/${itemAttraction._id}`}>
                         <h2>{itemAttraction.name}</h2>
                         <h4>{itemAttraction.genre}</h4>
                         </Link>
@@ -83,7 +86,7 @@ const getAttractions = async () => {
                     )   
                 })}
         </div>
-        </>
+        </div>
 );
 }
 

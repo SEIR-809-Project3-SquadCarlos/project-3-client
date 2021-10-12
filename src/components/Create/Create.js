@@ -82,6 +82,19 @@ return (
 			</div>
 
 			<div className='label-input'>
+			<label htmlFor='city'>City: </label>
+			<input
+				id='city'
+				className='input-create'
+				onChange={handleChange}
+				name='city'
+				type='text'
+				value={newAttraction.genre}
+				placeholder='new genre'
+			/>
+			</div>
+
+			<div className='label-input'>
 			<label htmlFor='address'>Address :</label>
 			<input
 				id='address'
