@@ -7,7 +7,7 @@ const Navbar = () => {
 	let location = useLocation();
 	console.log('location: ',location);
 	return (
-		<Nav className="nav" variant="tabs" activeKey={location.pathname === "/" ? "/" : '/create'}>
+		<Nav className="nav" variant="tabs" activeKey={location.pathname}>
 			<Nav.Item>
 				<Nav.Link href="/">Home</Nav.Link>
 			</Nav.Item>

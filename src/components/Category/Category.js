@@ -5,36 +5,60 @@ import API_URL from '../../config';
 
 const Category = () => {
     const [attractions,setAttractions]=useState([]);
-    const [input, setInput ]=useState('');
+    const [input, setInput ]=useState('Los Angeles');
     const [filter,setFilter]=useState([]);
 
-    useEffect(() => {
-        axios.get(`${API_URL}/attractions`)
-        // .then(res=>console.log('result: ', res))
-        .then(res=>setAttractions(res.data))
-        .then(console.log('attractions: ', attractions))
-        .catch(console.error)
-    }, []);
+const getAttractions = async () => {
+		try {
+			const res = await axios.get(`${API_URL}/attractions`);
+			setAttractions(res.data);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+  useEffect(() => {
+		getAttractions();
+	}, []);
+    // provided by Ben, first developed during project 2
+    const inputIsClose = (event, attraction)  => {
+		let mySnippet = '';
+		let distance = 0; // the difference between our two strings. In other words, how different are they?
+        //How many characters are different?
+		if (attraction.length <= 0) return false;
+		if (event.target.value.length < 3) return false;
+        // substring creates a new string starting at a given location, and extending to a given length.
+		mySnippet = attraction.substring(0, event.target.value.length);
 
+        // we need to compare strings that are the exact same length. That allows us to run something like a simple for loop.
+		for (let i = 0; i < mySnippet.length; i++) {
+			if (mySnippet[i] !== event.target.value[i].toLowerCase()) distance++;
+		}
+		if (distance > 3) return false;
+		return true;
+	}
     
-    const handleFilter = () => {
+    const handleFilter = (event) => {
         let result = attractions.filter(attraction => {
-            if(attraction.city === input 
-                || attraction.genre === input 
-                || attraction.name === input
-                ) 
-                return attraction;
-            })
-            console.log(result);
+
+            // an if statement measures either true or false
+            // inputIsClose() returns... true or false
+            //rather than a strict equals, what if we run inputIsClose, comparing our input to each of these values?
+        if( inputIsClose(event, attraction.city)
+            || inputIsClose(event, attraction.name)
+            || inputIsClose(event, attraction.genre)
+            ) 
+            return attraction;
+        })
+        console.log(result);
         return setFilter(result);
     }
 
     const handleChange = (event) =>{
         setInput(event.target.value);
+        handleFilter(event);
     }
     const handleSubmit = (event) =>{
         event.preventDefault();
-        handleFilter();
         setInput('');
     }
         
@@ -42,12 +66,6 @@ const Category = () => {
         <>
         <div>
             <form action="/" method="get" onSubmit={handleSubmit}>
-                {/* <select name="key" id="key">
-                    <option value="city">city</option>
-                    <option value="genre">genre</option>
-                    <option value="name">Name</option>
-                </select> */}
-
                 <input type="text" placeholder="Search" onChange={handleChange} value={input} />
                 <button type="submit">Submit</button>
             </form>
@@ -62,14 +80,10 @@ const Category = () => {
                         <h4>{itemAttraction.genre}</h4>
                         </Link>
                         </card>
-                    )
-                    
+                    )   
                 })}
         </div>
         </>
-        
-            
-
 );
 }
 
