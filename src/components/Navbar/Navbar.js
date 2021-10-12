@@ -14,6 +14,9 @@ const Navbar = () => {
 			<Nav.Item>
 				<Nav.Link href="/create" eventKey="/create">Create</Nav.Link>
 			</Nav.Item>
+			<Nav.Item>
+				<Nav.Link href="Categories">Categories</Nav.Link>
+			</Nav.Item>
 		</Nav>
 	);
 };

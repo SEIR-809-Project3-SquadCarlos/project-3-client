@@ -4,6 +4,7 @@ import Home from './components/Home/Home';
 import { Route } from 'react-router-dom';
 import Detail from './components/Detail/Detail';
 import Create from './components/Create/Create';
+import Category from './components/Category/Category'
 
 function App() {
 	return (
