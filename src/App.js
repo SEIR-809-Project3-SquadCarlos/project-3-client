@@ -16,6 +16,7 @@ function App() {
 				<Route exact path='/' component={Home} />
 				<Route path='/attractions/:id' component={Detail} />
 				<Route path='/create' component={Create} />
+				<Route path="/categories" component={Category} />
 			</main>
 		</div>
 	);
