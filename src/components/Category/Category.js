@@ -6,7 +6,7 @@ import './Category.css';
 
 const Category = () => {
     const [attractions,setAttractions]=useState([]);
-    const [input, setInput ]=useState('Los Angeles');
+    const [input, setInput ]=useState('');
     const [filter,setFilter]=useState([]);
 
 const getAttractions = async () => {
