@@ -6,7 +6,7 @@ import './Category.css';
 
 const Category = () => {
     const [attractions,setAttractions]=useState([]);
-    const [input, setInput ]=useState('');
+    const [input, setInput ]=useState({});
     const [filter,setFilter]=useState([...attractions]);
     const [problem,setProblem] = useState(false);
 
@@ -23,43 +23,46 @@ const getAttractions = async () => {
 		getAttractions();
 	}, []);
     
-    const inputIsClose = (event, string)  => {
+    const inputIsClose = (value, string)  => {
 		let mySnippet = '';
 		let distance = 0; 
-		if (!string) return false;
-		if (event.target.value.length < 3) return false;
+		if (!value) return false;
+		if (value.length < 3) return false;
        
-		mySnippet = string.substring(0, event.target.value.length);
+		mySnippet = string.substring(0, value.length);
 
        
 		for (let i = 0; i < mySnippet.length; i++) {
-			if (mySnippet[i] !== event.target.value[i].toLowerCase()) distance++;
+			if (mySnippet[i] !== value[i].toLowerCase()) distance++;
 		}
-		if (distance > 3) return false;
+		if (distance > 2) return false;
 		return true;
 	}
     
     const handleFilter = (event) => {
         let result = attractions.filter(attraction => {
 
-            
-        if( inputIsClose(event, attraction.city)
-            || inputIsClose(event, attraction.name)
-            || inputIsClose(event, attraction.genre)
+        if( input.city === attraction.city
+            || inputIsClose(input.name, attraction.name)
+            || inputIsClose(input.genre, attraction.genre)
             ) 
             return attraction;
         }) 
         
-        return setFilter(result);
+        setFilter(result);
     }
 
     const handleChange = (event) =>{
-        setInput(event.target.value);
-        handleFilter(event);
+		let key = event.target.name;
+		let value = event.target.value;
+        setInput({...input, [key]: value});
+		console.log(event.target.name);
     }
     const handleSubmit = (event) =>{
         event.preventDefault();
-        setInput('');
+        handleFilter(event);
+		console.log(input);
+        setInput({});
     }
         
     return (
@@ -70,16 +73,35 @@ const getAttractions = async () => {
 					action='/'
 					method='get'
 					onSubmit={handleSubmit}>
-					<h4 className='search-label'>Search by city, name, or type!</h4>
 
+					{/* <label for='citySearch'>Pick a city: </label> */}
+					<select name='city' id='citySearch' onChange={handleChange} selected={null} >
+						<option value="" disabled>choose a city</option>
+						<option value='New York City'>New York City</option>
+						<option value='Los Angeles'>Los Angeles</option>
+						<option value='New Jersey'>New Jersey</option>
+					</select>
+
+					{/* <label for='genre'>Search by genre: </label> */}
 					<input
-						id='cati-id'
+						id=''
 						type='text'
-						name='search'
-						placeholder='Search'
+						name='genre'
+						placeholder='search by genre'
 						onChange={handleChange}
-						value={input}
+						value={input.genre}
 					/>
+
+					{/* <label for='name'>Search by name: </label> */}
+					<input
+						id=''
+						type='text'
+						name='name'
+						placeholder='search by name'
+						onChange={handleChange}
+						value={input.name}
+					/>
+					<button type='submit'>Submit</button>
 				</form>
 
 				<div className='result'>
