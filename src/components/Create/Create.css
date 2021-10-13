@@ -97,6 +97,5 @@ h2 {
 @media(min-width: 500px) {
 	.create-form {
 		grid-row: 1/span 2;
-		height: fit-content;
 	}
 }
