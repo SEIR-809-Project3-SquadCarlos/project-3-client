@@ -3,12 +3,11 @@ Tou:Ring is a simple application designed for exploring and sharing attractions 
 
 
 ### WireFrames
-![image2](https://user-images.githubusercontent.com/88164567/137159130-86d758fa-954e-48a8-9a2d-5933f431ca90.jpeg)
+![Home Page](https://user-images.githubusercontent.com/88164567/137159262-f08c44a6-cf75-4a79-8896-b4735959c2a5.jpeg)
 
-![image1](https://user-images.githubusercontent.com/88164567/137159262-f08c44a6-cf75-4a79-8896-b4735959c2a5.jpeg)
+![Create Page](https://user-images.githubusercontent.com/88164567/137159130-86d758fa-954e-48a8-9a2d-5933f431ca90.jpeg)
 
-
-![image0](https://user-images.githubusercontent.com/88164567/137159211-a61c1362-24c7-430f-a534-f925da75c4b2.jpeg)
+![Categories Page](https://user-images.githubusercontent.com/88164567/137159211-a61c1362-24c7-430f-a534-f925da75c4b2.jpeg)
 
 ### Description
 This is full-CRUD React single page application allows users to view attractions in any city, and add their favorite attractions for others to see! The Categories page lets users search by city, genre, or name, and filters results for them in real time.
