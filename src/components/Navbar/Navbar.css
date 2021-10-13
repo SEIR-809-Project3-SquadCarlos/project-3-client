@@ -1,7 +1,12 @@
 .nav {
-	background-color: #2d4059;
+	background-color: rgba(0, 0, 0, 0.66);
 	position: sticky;
+	color:pink;
 }
-.active a {
-	background-color: green !important;
+
+.nav-link {
+color: pink !important;
+}
+a{
+	color:white;
 }

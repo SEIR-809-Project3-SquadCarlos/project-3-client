@@ -38,13 +38,6 @@ label {
 	margin: 15px;
 	padding: 15px;
 }
-button {
-	/* Display tells this object to display its children in a particular way. */
-    margin: 35px;
-	padding: 20px;
-	border-radius:20px;
-
-}
 
 .detail-modal {
 	grid-row: 2;
@@ -75,6 +68,7 @@ button {
 	
 	border: solid black 1px;
 	border-radius: 25px;
+	background: linear-gradient(180deg, rgba(0,0,0,0.7) 63%, rgba(255,255,255,0) 100%);
 	padding: 1rem;
 
     text-align: center;
@@ -91,13 +85,10 @@ button {
 
 }
 
-.form-buttons-flex{
-
-	align-self: center;
-	display: flex;
-	flex-direction: row;
-
-	justify-content: space-evenly;
+.app-button {
+	background: linear-gradient(0.25turn, #060809, #595958, #cecdcd) !important;
+	width: 150px;
+	height: 80px;
 }
 
 
@@ -131,6 +122,8 @@ button {
 	grid-column: 2;
 	margin-top: 2rem;
 
+	display: flex;
+	flex-direction: row;
 	justify-content: space-evenly;
 }
 

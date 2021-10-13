@@ -7,12 +7,13 @@ import './Category.css';
 const Category = () => {
     const [attractions,setAttractions]=useState([]);
     const [input, setInput ]=useState('');
-    const [filter,setFilter]=useState([]);
+    const [filter,setFilter]=useState([...attractions]);
 
 const getAttractions = async () => {
 		try {
 			const res = await axios.get(`${API_URL}/attractions`);
 			setAttractions(res.data);
+            setFilter(res.data);
 		} catch (error) {
 			console.log(error);
 		}
@@ -25,7 +26,7 @@ const getAttractions = async () => {
 		let mySnippet = '';
 		let distance = 0; // the difference between our two strings. In other words, how different are they?
         //How many characters are different?
-		if (!string.length) return false;
+		if (!string) return false;
 		if (event.target.value.length < 3) return false;
         // substring creates a new string starting at a given location, and extending to a given length.
 		mySnippet = string.substring(0, event.target.value.length);

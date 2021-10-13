@@ -9,7 +9,7 @@ const Navbar = () => {
 	return (
 		<Nav className="nav" variant="tabs" activeKey={location.pathname}>
 			<Nav.Item>
-				<Nav.Link href="/">Home</Nav.Link>
+				<Nav.Link className="class" href="/">Home</Nav.Link>
 			</Nav.Item>
 			<Nav.Item>
 				<Nav.Link href="/create" eventKey="/create">Create</Nav.Link>

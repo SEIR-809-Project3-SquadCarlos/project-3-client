@@ -55,7 +55,7 @@ const handleSubmit = async(event) => {
 return (
 	< >
 		<form className='create-form' onSubmit={handleSubmit}>
-		<h2>Please fill this form for create new Attraction</h2>
+		<h2>Please fill this form to add an Attraction</h2>
 			<div className='label-input'>
 				<label htmlFor='id'>Name :</label>
 				<input
@@ -66,6 +66,7 @@ return (
 					type='text'
 					value={newAttraction.name}
 					placeholder='new name'
+					required
 				/>
 			</div>
 			<div className='label-input'>
@@ -78,6 +79,7 @@ return (
 				type='text'
 				value={newAttraction.genre}
 				placeholder='new genre'
+				required
 			/>
 			</div>
 
@@ -89,8 +91,9 @@ return (
 				onChange={handleChange}
 				name='city'
 				type='text'
-				value={newAttraction.genre}
-				placeholder='new genre'
+				value={newAttraction.city}
+				placeholder='new city'
+				required
 			/>
 			</div>
 
@@ -132,7 +135,7 @@ return (
 			/>
 			</div>
 
-			<button className='btn-create' type='submit'>
+			<button className='btn-create app-button' type='submit'>
 				Submit
 			</button>
 		</form>

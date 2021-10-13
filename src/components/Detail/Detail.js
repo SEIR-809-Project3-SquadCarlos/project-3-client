@@ -11,7 +11,7 @@ import "../Form.css"
 const Detail = ({ props }) => {
 	/////function logic is here
 
-	// Use state here to represent the attactions
+	// Use state here to represent the attractions
 	const [singleAttraction, setSingleAttraction] = useState([]);
 	const [edit, setEdit] = useState(false);
 	const { id } = useParams();
@@ -107,11 +107,11 @@ const Detail = ({ props }) => {
 						Website: {singleAttraction.url}
 					</a>
 				</section>
-			</div>
 			<aside className='buttons-flex'>
-				<button onClick={handleEdit}>Edit</button>
-				<button onClick={handleDelete}>Delete</button>
+				<button className="app-button" onClick={handleEdit}>Edit</button>
+				<button className="app-button"onClick={handleDelete}>Delete</button>
 			</aside>
+			</div>
 			</>
 			 ) : (
 				<div className='detail-modal'>
@@ -187,10 +187,10 @@ const Detail = ({ props }) => {
 							/>
 						</div>
 						<aside className='form-buttons-flex'>
-							<button className='form-button' type='submit'>
+							<button className='app-button' type='submit'>
 								Submit
 							</button>
-							<button className='form-button'  onclick={handleEdit}>
+							<button className='app-button'  onclick={handleEdit}>
 								Cancel
 							</button>
 						</aside>
