@@ -5,7 +5,6 @@ import "./Navbar.css"
 
 const Navbar = () => {
 	let location = useLocation();
-	console.log('location: ',location);
 	return (
 		<Nav className="nav" variant="tabs" activeKey={location.pathname}>
 			<Nav.Item>

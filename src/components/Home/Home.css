@@ -2,45 +2,34 @@ a {
 	text-decoration: none;
 	color: grey;
 }
-
 .headline {
 	color: black;
 	grid-column: 2;
 	grid-row: 1;
 	text-align: center;
 }
-.attraction-list {
-	/* how am I displayed inside my parent? */
-
+.attraction-list {	
 	grid-row: 2;
 	grid-column: 2;
 	border-radius: 1rem;
 	background: linear-gradient(180deg, rgba(0,0,0,0.7) 63%, rgba(255,255,255,0) 100%);
-
-
 	margin: 20px auto;
 	width: 100%;
 	height: 100%;
-
 	color: black;
 	color: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
 	justify-content: space-around;
 	justify-items: center;
 	align-items: center;
-
-	/* how should I display my children? */
 	display: grid;
 	grid-template-rows: repeat(auto-fill, 1fr);
 	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 	gap: 1rem;
-
 	overflow: auto;
 }
-
 .attraction-list::-webkit-scrollbar {
 	display: none;
 }
-
 .home-attraction {
 	margin: 10px;
 	padding: 10px;
@@ -51,7 +40,6 @@ a {
 	background-color: rgba(238, 238, 238, 0.4);
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 	text-align: center;
-
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -64,12 +52,7 @@ a {
 	text-decoration: none;
 	color: rgb(238, 238, 238);
 }
-
-
-/* create media queries for tablet, then computer, on Home.css */
-
 @media (min-width: 500px) {
 }
-/* rip zoom */
 @media (min-width: 1001px) {
 }

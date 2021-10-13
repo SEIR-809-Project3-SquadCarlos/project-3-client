@@ -1,19 +1,7 @@
-/* Eegii
-start giving classNmes for the tags
-give style on buttons and inputs
-    border radius, color, font
-stick with 3 simple color for hole app!
-media quiry!
-
-*/
-
 form {
-	/* Display tells this object to display its children in a particular way. */
 	display: grid;
 	grid-template: repeat(6, 1fr) / 1fr;
 	padding: 10px;
-    
-
 }
 label {
 	color:rgb(238, 238, 238);
@@ -41,15 +29,12 @@ label {
 
 .detail-modal {
 	grid-row: 2;
-	grid-column: 1/span 3;
-	
+	grid-column: 1/span 3;	
 	z-index: 4;
 	height: 110%;
 	width:100%;
-
 	display: flex;
 	flex-direction: column;
-
 	overflow: auto;
 }
 
@@ -61,67 +46,48 @@ label {
 .detail-model::-webkit-scrollbar {
 	display: none;
 }
-
 .edit-form {
 	width: 100%;
 	height: 100%;
-	
 	border: solid black 1px;
 	border-radius: 25px;
 	background: linear-gradient(180deg, rgba(0,0,0,0.7) 63%, rgba(255,255,255,0) 100%);
 	padding: 1rem;
-
     text-align: center;
 	font-family: 'Roboto', sans-serif;
 	color: rgb(238, 238, 238);
-
 	display: flex;
 	flex-direction: column;
 	overflow: auto;
 }
-
 .edit-form::-webkit-scrollbar {
 	display: none;
-
 }
-
 .app-button {
 	background: linear-gradient(0.25turn, #060809, #595958, #cecdcd) !important;
 	width: 150px;
 	height: 80px;
 }
-
-
 @media(min-width: 500px) {
 	.detail-modal {
-	/* position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%); */
 	grid-row: 1/span 3;
 	grid-column: 1/span 3;
 	align-self: center;
-	/* background-color: rgba(0, 0, 0, 0.7);  */
-
 	display: grid;
 	grid-template: 10% 80% 10%/10% 80% 10%;
-
-	overflow: none;
+    overflow: none;
 }
-
 .edit-form {
 	grid-row: 2;
 	grid-column: 2;
 	height: 110%;
 	width: 100%;
-
-	padding: 1rem;
+    padding: 1rem;
 }
 .form-buttons-flex {
 	grid-row: 3;
 	grid-column: 2;
 	margin-top: 2rem;
-
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
@@ -129,7 +95,5 @@ label {
 
 .form-button {
 	align-self: center;
-
 }
-
 }

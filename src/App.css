@@ -1,23 +1,16 @@
-/* Rely on Grid */
-
 * {
 	margin: 0;
 	padding: 0;
-    /* background-color: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c); */
 }
-
 .app {
 	display: grid;
 	grid-template: 5% 95% / 10% 80% 10%;
 	background-color: rgb(34, 40, 49);
-
-	/* height: 100%; */
 	height: 100vh;
 	width: 100%;
 	background-image: url('./assets/backgrounds/bg.jpeg');
 	background-size: cover;
 }
-
 header {
 	grid-row: 1;
 	grid-column: 1 / span 3;
@@ -25,9 +18,7 @@ header {
 main {
 	grid-row: 2;
 	grid-column: 2;
-
 }
-
 * a {
 	text-decoration: none;
 	color:white;
@@ -36,31 +27,11 @@ main {
 	background: linear-gradient(0.25turn, #060809, #595958, #cecdcd);
 	width: 150px;
 	height: 80px;
-
 	color: pink;
 }
-
-
 @media(min-width: 600px){
 	.app{
 		display: grid;
 		grid-template-rows: 10% 80% 10%;
 	}
 }
-
-/*change the look and font of the navbar  */
-
-/* add basic animations 
-   add individual css files for components
-   put hover effect while switching onto different attractions in
-
-1- we have to install
- $ npm install animate.css --save
-or
- 2- npm add animate.css
-
- 3- import to our files
-    import 'animate.css'
-
-    we also csn use @keyframes by using it in classes so that they can be reusable
-*/

@@ -7,12 +7,8 @@ import '../Form.css';
 
 const Create = () => {
  const history = useHistory();
-//  const {id}= useParams();
-
-// STATE variables
-// newAttraction - an object modeled EXACTLY like our attractionSchema
  const [ newAttraction, setNewAttraction ] = useState({});
-//  const [newValue, setNewValue]= userState([])
+ const [problem,setProblem] = useState(false);
 
 const handleChange = (event )=>{
     let name =event.target.name;
@@ -22,25 +18,16 @@ const handleChange = (event )=>{
 
 }
 
-// useEffect - is used when a component MOUNTS 
-
-// FUNCTIONS
-
-// onSubmit
-    // Run a POST Request, passing in the newAttraction that the user created.
-    // Return our user to the Home page after submitting!
 const handleSubmit = async(event) => {
     event.preventDefault();
-    console.log('hi')
     const verify = window.confirm(`Are you sure you want to create this?`)
     if (verify) {
         try {
            const Attraction = await axios.post(`${API_URL}/attractions`, newAttraction)
-           console.log(Attraction.status)
            
             Attraction.status === (200) && history.push('/')
         } catch (error) {
-            console.error(error)
+            setProblem(error)
         }
         
     }
@@ -48,14 +35,12 @@ const handleSubmit = async(event) => {
         return
     }
 }
-// update
 
-
-// RETURN
 return (
-	< >
+	<>
+		{problem && <hh>{problem}</hh>}
 		<form className='create-form' onSubmit={handleSubmit}>
-		<h2>Please fill this form to add an Attraction</h2>
+			<h2>Please fill this form to add an Attraction</h2>
 			<div className='label-input'>
 				<label htmlFor='id'>Name :</label>
 				<input
@@ -70,69 +55,69 @@ return (
 				/>
 			</div>
 			<div className='label-input'>
-			<label htmlFor='genre'>Genre :</label>
-			<input
-				id='genre'
-				className='input-create'
-				onChange={handleChange}
-				name='genre'
-				type='text'
-				value={newAttraction.genre}
-				placeholder='new genre'
-				required
-			/>
+				<label htmlFor='genre'>Genre :</label>
+				<input
+					id='genre'
+					className='input-create'
+					onChange={handleChange}
+					name='genre'
+					type='text'
+					value={newAttraction.genre}
+					placeholder='new genre'
+					required
+				/>
 			</div>
 
 			<div className='label-input'>
-			<label htmlFor='city'>City: </label>
-			<input
-				id='city'
-				className='input-create'
-				onChange={handleChange}
-				name='city'
-				type='text'
-				value={newAttraction.city}
-				placeholder='new city'
-				required
-			/>
+				<label htmlFor='city'>City: </label>
+				<input
+					id='city'
+					className='input-create'
+					onChange={handleChange}
+					name='city'
+					type='text'
+					value={newAttraction.city}
+					placeholder='new city'
+					required
+				/>
 			</div>
 
 			<div className='label-input'>
-			<label htmlFor='address'>Address :</label>
-			<input
-				id='address'
-				className='input-create'
-				onChange={handleChange}
-				name='address'
-				type='text'
-				value={newAttraction.address}
-				placeholder='new address'
-			/>
+				<label htmlFor='address'>Address :</label>
+				<input
+					id='address'
+					className='input-create'
+					onChange={handleChange}
+					name='address'
+					type='text'
+					value={newAttraction.address}
+					placeholder='new address'
+				/>
 			</div>
 			<div className='label-input'>
-			<label htmlFor='url'>Website :</label>
-			<input
-				id='url'
-				className='input-create'
-				onChange={handleChange}
-				name='url'
-				type='text'
-				value={newAttraction.url}
-				placeholder='new website'
-			/>
+				<label htmlFor='url'>Website :</label>
+				<input
+					id='url'
+					className='input-create'
+					onChange={handleChange}
+					name='url'
+					type='text'
+					value={newAttraction.url}
+					placeholder='new website'
+				/>
 			</div>
 
 			<div className='label-input'>
-			<label htmlFor='description'>Description :</label>
-			<input
-				id='description'
-				className='input-create'
-				onChange={handleChange}
-				name='description'
-				type='text'
-				value={newAttraction.description}
-				placeholder='new description'
-			/>
+				<label htmlFor='description'>Description :</label>
+				<input
+					id='description'
+					className='input-create'
+					onChange={handleChange}
+					name='description'
+					type='text'
+					value={newAttraction.description}
+					placeholder='new description'
+				/>
 			</div>
 
 			<button className='btn-create app-button' type='submit'>
@@ -142,16 +127,6 @@ return (
 	</>
 );
 }
-// Let's make a form that the user can fill out.
-// It should include INPUTS for:
-// name
-// genre
-    //   address
-    //   website
-    //   description
-// Our inputs will update state variables onChange
-// onSubmit, we will run our POST request using the completed model!
 
-// export default Create
 
 export default Create;
