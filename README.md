@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+### Welcome to Tou:Ring
+Tou:Ring is a simple application designed for exploring and sharing attractions in any city around the world. Leveraging a streamlined, flexible [API](https://project3-attractions.herokuapp.com/attractions), Tou:Ring could easily be expanded into a robust social network, allowing "Rings" of friends to compare their favorite spots and plan group outings.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### WireFrames
+![image2](https://user-images.githubusercontent.com/88164567/137159130-86d758fa-954e-48a8-9a2d-5933f431ca90.jpeg)
 
-In the project directory, you can run:
+![image1](https://user-images.githubusercontent.com/88164567/137159262-f08c44a6-cf75-4a79-8896-b4735959c2a5.jpeg)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![image0](https://user-images.githubusercontent.com/88164567/137159211-a61c1362-24c7-430f-a534-f925da75c4b2.jpeg)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Description
+This is full-CRUD React single page application allows users to view attractions in any city, and add their favorite attractions for others to see! The Categories page lets users search by city, genre, or name, and filters results for them in real time.
 
-### `npm test`
+The app is modeled after the core functions of Yelp and Google's Attractions feature.
+### Technologies Used
+- React
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Dependencies:
+    - axios for api requests
+    - bootstrap for reponsive nav bar
+    - react
+    - react-bootstrap
+    - react-dom
+    - react-router-dom
+    - react-scripts
+    - web-vitals
+    
+### Contribution Guidelines
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+GitHub Workflow
+- Fork this repo
+- Clone down the project onto your computer
+- Make any proposed changes, and test them!
+- Push the changes up to your GitHub project
+- Make a Pull Request to this repo
+- Once approved, your name and info will be added to the Contributors list 
+### Thank you!
+- Ben Papac [LinkedIn](https://www.linkedin.com/in/benpapac/)
+- Eegii Unurbayar [LinkedIn](https://www.linkedin.com/in/enkhtsetseg-unurbayar-014176130/)
+- Gary Williams [LinkedIn](www.linkedin.com/in/gary-williams-sum)
+- Syeda Alam[LinkedIn](https://www.linkedin.com/in/syedahalam/)
