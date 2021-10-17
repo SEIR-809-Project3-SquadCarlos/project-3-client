@@ -38,18 +38,44 @@ const getAttractions = async () => {
 		if (distance > 2) return false;
 		return true;
 	}
-    
-    const handleFilter = (event) => {
-        let result = attractions.filter(attraction => {
 
-        if( input.city === attraction.city
-            || inputIsClose(input.name, attraction.name)
-            || inputIsClose(input.genre, attraction.genre)
-            ) 
-            return attraction;
-        }) 
-        
-        setFilter(result);
+	const checkCity = () => {
+		let result = attractions.filter( attraction => {
+			if(input.city === attraction.city) return attraction;
+		});
+
+		return result;
+	}
+
+	const checkGenre = () => {
+		let result = attractions.filter((attraction) => {
+			if (inputIsClose(input.genre, attraction.genre)) return attraction;
+		});
+
+		return result;
+	};
+
+	const checkName = () => {
+		let result = attractions.filter((attraction) => {
+			if (inputIsClose(input.name, attraction.name)) return attraction;
+		});
+
+		return result;
+	};
+    
+    const handleFilter = () => {
+		let result= [];
+		let test = [];
+		if(input.city) result.push(...checkCity());
+		if(input.genre) result.push(...checkGenre());
+		if(input.name) result.push(...checkName());
+		console.log(checkGenre());
+		result = result.filter( attraction => {
+			if (!test.includes(attraction.name)) return attraction;
+			test.push(attraction.name);
+		});
+		
+    	setFilter(result);
     }
 
     const handleChange = (event) =>{
