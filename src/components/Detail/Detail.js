@@ -95,9 +95,9 @@ const Detail = ({ props }) => {
 					</div>
 				</>
 			) : (
-				<div className='detail-modal'>
-					<form className='edit-form' name='update' onSubmit={handleSubmit}>
-						<div className='label-text'>
+				<>
+					<form name='update' onSubmit={handleSubmit}>
+						<div>
 							<label htmlFor='name'>Name:</label>
 							<input
 								id='name'
@@ -108,10 +108,9 @@ const Detail = ({ props }) => {
 								placeholder='edit name'
 							/>
 						</div>
-						<div className='label-text'>
+						<div>
 							<label htmlFor='genre'>Genre: </label>
 							<input
-								
 								id='genre'
 								onChange={handleChange}
 								name='genre'
@@ -120,10 +119,9 @@ const Detail = ({ props }) => {
 								placeholder='edit genre'
 							/>
 						</div>
-						<div className='label-text'>
+						<div>
 							<label htmlFor='city'>City: </label>
 							<input
-							
 								id='city'
 								onChange={handleChange}
 								name='city'
@@ -132,7 +130,7 @@ const Detail = ({ props }) => {
 								placeholder='edit city'
 							/>
 						</div>
-						<div className='label-text'>
+						<div>
 							<label htmlFor='address'>Address:</label>
 							<input
 								id='address'
@@ -143,7 +141,7 @@ const Detail = ({ props }) => {
 								placeholder='edit address'
 							/>
 						</div>
-						<div className='label-text'>
+						<div>
 							<label htmlFor='url'>Website:</label>
 							<input
 								id='url'
@@ -154,7 +152,7 @@ const Detail = ({ props }) => {
 								placeholder='edit website'
 							/>
 						</div>
-						<div className='label-text'>
+						<div>
 							<label htmlFor='description'>Description:</label>
 							<input
 								id='description'
@@ -167,16 +165,16 @@ const Detail = ({ props }) => {
 								height='100'
 							/>
 						</div>
-						<aside className='form-buttons-flex'>
-							<button className='app-button' type='submit'>
-								Submit
-							</button>
-							<button className='app-button' onclick={handleEdit}>
-								Cancel
-							</button>
-						</aside>
+					<aside className='buttons-flex'>
+						<button className='app-button' type='submit'>
+							Submit
+						</button>
+						<button className='app-button' onclick={handleEdit}>
+							Cancel
+						</button>
+					</aside>
 					</form>
-				</div>
+				</>
 			)}
 		</>
 	);

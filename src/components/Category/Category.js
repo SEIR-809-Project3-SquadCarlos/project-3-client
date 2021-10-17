@@ -66,7 +66,7 @@ const getAttractions = async () => {
     }
         
     return (
-			<div className='category-parent'>
+			<>
 				{problem && <hh>{problem}</hh>}
 				<form
 					className='search-form'
@@ -104,19 +104,19 @@ const getAttractions = async () => {
 					<button type='submit'>Submit</button>
 				</form>
 
-				<div className='result'>
+				<div className='attraction-list'>
 					{filter.map((itemAttraction) => {
 						return (
-							<card className='category-link'>
+							<div className='attraction'>
 								<Link to={`/attractions/${itemAttraction._id}`}>
 									<h2>{itemAttraction.name}</h2>
-									<h4>{itemAttraction.genre}</h4>
+									<h4>{itemAttraction.city}</h4>
 								</Link>
-							</card>
+							</div>
 						);
 					})}
 				</div>
-			</div>
+			</>
 		);
 }
 
