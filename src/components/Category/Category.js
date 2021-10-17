@@ -101,8 +101,8 @@ const getAttractions = async () => {
 					onSubmit={handleSubmit}>
 
 					{/* <label for='citySearch'>Pick a city: </label> */}
-					<select name='city' id='citySearch' onChange={handleChange} selected={null} >
-						<option value="" disabled>choose a city</option>
+					<select name='city' id='citySearch' onChange={handleChange} >
+						<option name='prompt' value="" selected disabled>choose a city</option>
 						<option value='New York City'>New York City</option>
 						<option value='Los Angeles'>Los Angeles</option>
 						<option value='New Jersey'>New Jersey</option>
