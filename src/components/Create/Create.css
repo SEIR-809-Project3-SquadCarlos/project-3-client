@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-
-
-
-.label-input {
-	display: block;
-}
-
 label {
 	margin-top: 1rem;
 	margin-right: 2rem;
@@ -15,12 +8,7 @@ label {
 	font-size: 2rem;
 	width: 180px;
 }
-.input-create {
-	width: fit-content;
-	height: 2.5rem;
-	border-radius: 8px;
-	background-color: rgb(238, 238, 238);
-}
+
 input:focus,
 textarea:focus {
 	background: rgb(238, 238, 238);
@@ -29,21 +17,7 @@ textarea:focus {
 ::placeholder {
 	padding: 8px;
 }
-.app-button {
-	background: linear-gradient(0.25turn, #060809, #595958, #cecdcd);
-	width: 150px;
-	height: 80px;
-	font-size: 1.5rem;
-	color: pink;
-	margin: 2.5rem;
-	align-self: center;
-	justify-self: center;
-	border-radius: 20px;
-}
-h2 {
-	color: rgb(238, 238, 238);
 
-}
 @media (min-width: 500px) {
 	.create-form {
 		grid-row: 1 / span 3;

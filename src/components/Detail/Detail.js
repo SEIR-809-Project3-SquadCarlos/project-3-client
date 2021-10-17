@@ -69,13 +69,11 @@ const Detail = ({ props }) => {
 					{problem && <hh>{problem}</hh>}
 					<div className='detail-attraction'>
 						<h1 id='detail-item-name'>{singleAttraction.name}</h1>
-						<section className='details'>
-							<p className='detail-item' id='detail-item-description'>
-								{singleAttraction.description}
-							</p>
-							<li className='detail-item' id='detail-item-address'>
-								Address: {singleAttraction.address}
-							</li>
+						<p className='detail-item' id='detail-item-description'>
+							{singleAttraction.description}
+						</p>
+						<section id='detail-item-addresses'>
+							<p className='detail-item'>Address: {singleAttraction.address}</p>
 							<a
 								href={`${singleAttraction.url}`}
 								alt='website link'
@@ -165,14 +163,14 @@ const Detail = ({ props }) => {
 								height='100'
 							/>
 						</div>
-					<aside className='buttons-flex'>
-						<button className='app-button' type='submit'>
-							Submit
-						</button>
-						<button className='app-button' onclick={handleEdit}>
-							Cancel
-						</button>
-					</aside>
+						<aside className='buttons-flex'>
+							<button className='app-button' type='submit'>
+								Submit
+							</button>
+							<button className='app-button' onclick={handleEdit}>
+								Cancel
+							</button>
+						</aside>
 					</form>
 				</>
 			)}
