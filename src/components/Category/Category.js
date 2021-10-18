@@ -87,10 +87,8 @@ const getAttractions = async () => {
 		if(input.genre) result.push(...checkGenre());
 		if(input.name) result.push(...checkName());
 
-		console.log('many: ',multipleInputs());
 		if(multipleInputs()) result = consolidate(result);
 		
-		console.log('result: ', result);
 
     	setFilter(result);
     }
@@ -110,7 +108,7 @@ const getAttractions = async () => {
         
     return (
 			<>
-				{problem && <hh>{problem}</hh>}
+				{problem && <h1>{problem}</h1>}
 				<form
 					className='search-form'
 					action='/'
