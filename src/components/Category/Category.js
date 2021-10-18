@@ -75,21 +75,20 @@ const getAttractions = async () => {
 		}
 		return accum;
 	}
+
+	const multipleInputs = () => {
+		return Object.keys(input).length > 1;
+	}
     
     const handleFilter = () => {
 		let result= [];
 
 		if(input.city) result.push(...checkCity());
-		if(input.genre) {
-			result.push(...checkGenre());
-			result = consolidate(result);
-		}
+		if(input.genre) result.push(...checkGenre());
+		if(input.name) result.push(...checkName());
 
-		if(input.name) {
-			result.push(...checkName());
-			result = consolidate(result);
-		}
-
+		console.log('many: ',multipleInputs());
+		if(multipleInputs()) result = consolidate(result);
 		
 		console.log('result: ', result);
 
