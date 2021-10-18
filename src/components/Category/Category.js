@@ -62,19 +62,37 @@ const getAttractions = async () => {
 
 		return result;
 	};
+
+	const consolidate =(result) =>{
+		let accum =[];
+		let test = [];
+		for (let i =0; i < result.length; i++){
+			if(!test[result[i].name]){
+				test[result[i].name] = true;
+			}
+
+			else  accum.push(result[i]);
+		}
+		return accum;
+	}
     
     const handleFilter = () => {
 		let result= [];
-		let test = [];
+
 		if(input.city) result.push(...checkCity());
-		if(input.genre) result.push(...checkGenre());
-		if(input.name) result.push(...checkName());
-		console.log(checkGenre());
-		result = result.filter( attraction => {
-			if (!test.includes(attraction.name)) return attraction;
-			test.push(attraction.name);
-		});
+		if(input.genre) {
+			result.push(...checkGenre());
+			result = consolidate(result);
+		}
+
+		if(input.name) {
+			result.push(...checkName());
+			result = consolidate(result);
+		}
+
 		
+		console.log('result: ', result);
+
     	setFilter(result);
     }
 

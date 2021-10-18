@@ -124,7 +124,6 @@ form::-webkit-scrollbar {
 }
 
 .search-form {
-
 	grid-column: 2;
 	grid-row: 1;
 	border-radius: 0;
@@ -138,6 +137,7 @@ form::-webkit-scrollbar {
 	align-items: center;
 
 }
+
 
 .buttons-flex{
 	grid-column: 2;
